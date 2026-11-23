@@ -4,18 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guide des Compositions</title>
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
 <style>
-/* Layout: single dark page, hero + phone preview on the left/right, then features, price card, FAQ. Mirrors the app: slate panels, indigo accent. */
-:root{
-  --bg:#0f172a; --panel:#1e293b; --line:rgba(255,255,255,.08);
-  --accent:#6366f1; --accent-hover:#4f46e5; --text:#f8fafc; --muted:#94a3b8;
-  --gold:#eab308; --green:#22c55e; --blue:#3b82f6; --violet:#a855f7;
-  --font-display:'Space Grotesk',Inter,system-ui,sans-serif;
-  --font-body:Inter,'Segoe UI',system-ui,sans-serif;
-  color-scheme:dark;
-}
+:root{--bg:#0f172a;--panel:#1e293b;--line:rgba(255,255,255,.08);--accent:#6366f1;--accent-hover:#4f46e5;--text:#f8fafc;--muted:#94a3b8;--gold:#eab308;--green:#22c55e;--blue:#3b82f6;--violet:#a855f7;--font-display:'Space Grotesk',Inter,system-ui,sans-serif;--font-body:Inter,'Segoe UI',system-ui,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}
 html{background:#0f172a}body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;margin:0}
 .wrap{max-width:1040px;margin:0 auto;padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -61,140 +52,122 @@ ul.ok li::before{content:"";position:absolute;left:4px;top:.55em;width:10px;heig
 details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:12px}
 summary{cursor:pointer;font-weight:600}
 details p{color:var(--muted);margin-top:10px}
-.banner{background:rgba(234,179,8,.12);border-bottom:1px solid var(--gold);color:var(--gold);text-align:center;font-size:.85rem;padding:8px 16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:760px){.hero,.price{grid-template-columns:1fr}.hero{padding-block:16px 40px}}
 </style>
 </head>
 <body>
-<div style="background:#1e2a38;color:#fff;padding:20px;text-align:center;font-family:sans-serif;">
-  <p>Le Guide des Compositions est une appli créée par un joueur pour trouver la bonne équipe de héros à chaque chapitre. Ce n'est pas une appli officielle, mais elle ne demande ni identifiant ni mot de passe et n'accède jamais à ton compte de jeu.</p>
-  <p>Comme l'appli ne passe pas par le Play Store, ton téléphone te demandera d'autoriser l'installation depuis une source inconnue. C'est normal et sans danger, il suffit d'accepter pour cette appli.</p>
-  <p><strong>Essaie gratuitement la version d'essai avant d'acheter !</strong></p>
-</div>
-
 <div class="wrap">
-  <nav>
-    <div class="brand">Guide des <b>Compositions</b></div>
-    <div class="cta" style="margin:0"><a class="btn ghost" href="#essai">Essayer gratuitement</a>
-      <a class="btn ghost" href="#acheter">Obtenir l'application</a></div>
-  </nav>
-
-  <header class="hero">
-    <div>
-      <div class="eyebrow">Application Android hors ligne</div>
-      <h1>Choisissez les bons héros et réussissez les chapitres plus rapidement, simplement et facilement.</h1>
-      <p class="lead">Utilisez directement la bonne composition : vous gagnez un temps fou et vos héros progressent plus vite. Idéal pour viser des niveaux supérieurs.</p>
-      <div class="cta">
-        <a class="btn" href="#acheter">Je veux progresser plus vite</a>
-        <a class="btn ghost" href="#fonctions">Voir les fonctions</a>
-      </div>
-      <p class="muted" style="margin-top:14px;font-size:.85rem;max-width:52ch">Les équipes sont les plus utilisées par les joueurs. Elles donnent un bon point de départ, sans garantie de réussite.</p>
-    </div>
-    <div class="phone" aria-label="Aperçu de l'application">
-      <div class="screen">
-        <div class="bar"><span>Chapitre 6 · Élite</span><span>Niv. repère 54</span></div>
-        <div class="chap"><span>Étape 6-12</span><span>🟠</span></div>
-        <div class="team"><div class="t"><span>Équipe n°1</span><span>⭐</span></div>
-          <div class="heroes"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i><i class="g5"></i></div></div>
-        <div class="team"><div class="t"><span>Équipe n°2</span><span></span></div>
-          <div class="heroes"><i class="g3"></i><i class="g1"></i><i class="g5"></i><i class="g2"></i><i class="g4"></i></div></div>
-      </div>
-    </div>
-  </header>
-
-  <section class="sec" id="benefices">
-    <div class="eyebrow">Pourquoi l'utiliser</div>
-    <h2>Trois raisons de gagner du temps</h2>
-    <div class="grid">
-      <div class="card"><h3>Trouvez tout de suite l'équipe à essayer</h3><p>Pour chaque étape, la composition la plus utilisée est déjà affichée. Plus besoin de chercher.</p></div>
-      <div class="card"><h3>Suivez vos héros</h3><p>Notez le niveau et la couleur de chaque héros et gardez une vue claire de votre progression.</p></div>
-      <div class="card"><h3>Comparez plusieurs équipes</h3><p>Pour une même étape, découvrez d'autres compositions possibles et ajoutez la vôtre.</p></div>
-    </div>
-  </section>
-
-  <section class="sec" id="fonctions">
-    <div class="eyebrow">Fonctions</div>
-    <h2>Ce que contient l'application</h2>
-    <div class="grid">
-      <div class="card"><h3>8 chapitres, 2 modes</h3><p>Normal et Élite, avec les équipes les plus utilisées pour chaque étape.</p></div>
-      <div class="card"><h3>Mes héros</h3><p>Indiquez le niveau et la couleur de vos héros. Un repère de niveau vous prévient si vous êtes en dessous.</p></div>
-      <div class="card"><h3>Ma composition</h3><p>Ajoutez vos propres équipes à côté de celles du guide, et modifiez-les quand vous voulez.</p></div>
-      <div class="card"><h3>Médailles</h3><p>Un tableau récapitulatif par héros et par étape, pour le mode Élite.</p></div>
-      <div class="card"><h3>Sauvegarde 💾</h3><p>Exportez vos réglages dans un fichier et rechargez-les sur un autre téléphone.</p></div>
-      <div class="card"><h3>Hors ligne</h3><p>Aucun compte. Internet n'est nécessaire qu'une seule fois, pour activer votre code. Vos données restent sur votre appareil.</p></div>
-    </div>
-  </section>
-
-  <section class="sec" id="acheter">
-    <div class="eyebrow">Tarif</div>
-    <h2>Un seul paiement</h2>
-    <p class="muted">Pas d'abonnement, pas de publicité.</p>
-    <div class="price">
-      <div>
-        <div class="amount">6 €<small>paiement unique</small></div>
-        <p class="muted" style="margin-top:12px">Après paiement, vous recevez immédiatement votre code de licence et le lien de téléchargement.</p>
-      </div>
-      <div>
-        <ul class="ok">
-          <li>Application Android (APK) et Windows (installeur)</li>
-          <li>Code de licence personnel (un seul téléphone)</li>
-          <li>Mises à jour sur cette page</li>
-        </ul>
-        <label class="agree"><input type="checkbox" id="agree"> J'ai compris que l'application est réservée à mon usage personnel et que je ne dois pas la partager.</label>
-        <div style="margin-top:16px"><a class="btn" id="buy" href="#acheter" aria-disabled="true">Bientôt disponible</a></div>
-        <p class="note" id="buyNote">L'achat ouvrira prochainement. Aucun paiement n'est possible pour le moment.</p>
-        <p class="muted" style="margin-top:8px;font-size:.85rem">Paiement sécurisé par Stripe. Après le paiement, votre code et le lien de téléchargement s'affichent tout de suite : notez le code.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="essai">
-    <div class="eyebrow">Essai gratuit</div>
-    <h2>Essayez avant d'acheter</h2>
-    <p class="muted">L'essai est gratuit et sans compte : les chapitres 1 à 3 du mode Élite sont ouverts, le reste est verrouillé. Le code de licence (après achat) débloque tout.</p>
-    <div class="cta" style="margin-top:16px">
-      <a class="btn" href="https://github.com/LGaulois/guide-compositions/releases/download/V1/guide-compositions.apk">Essai gratuit Android (APK)</a>
-      <a class="btn ghost" href="https://github.com/LGaulois/guide-compositions/releases/download/V1/Guide-des-Compositions-Installation-1.0.0.exe">Essai gratuit Windows</a>
-    </div>
-    <p class="muted" style="margin-top:10px;font-size:.85rem">Android : autorisez l'installation d'applications inconnues si le téléphone le demande. Windows : si « Windows a protégé votre PC » s'affiche, cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
-  </section>
-
-  <section class="sec" id="faq">
-    <div class="eyebrow">Questions</div>
-    <h2>Installation et questions fréquentes</h2>
-    <details><summary>Comment installer l'application ?</summary><p>Téléchargez le fichier sur votre téléphone, ouvrez-le, puis autorisez l'installation d'applications inconnues pour l'application qui l'ouvre (navigateur ou Drive).</p></details>
-    <details><summary>Android affiche « Application bloquée » ou un message Play Protect.</summary><p>L'application ne vient pas du Play Store, donc Play Protect ne la connaît pas encore. Appuyez sur « Plus de détails », puis « Installer quand même ». Sur certains Samsung, désactivez temporairement le « Bloqueur automatique ».</p></details>
-    <details><summary>Puis-je utiliser l'application sur plusieurs téléphones ?</summary><p>Non : le code de licence ne fonctionne que sur un seul téléphone. Pour changer de téléphone, écrivez-nous à legionnairegaulois@gmail.com. En cas de remboursement, le code est désactivé.</p></details>
-    <details><summary>Et sur iPhone ?</summary><p>Pas pour le moment. Seule la version Android est proposée.</p></details>
-    <details><summary>Où sont mes données ?</summary><p>Uniquement sur votre téléphone. L'application ne se connecte à internet que pour vérifier votre code de licence (à l'activation, puis de temps en temps).</p></details>
-  </section>
-
-  <footer>
-    <span>© Guide des Compositions · fanspeed</span>
-    <span>Contact : legionnairegaulois@gmail.com</span>
-  </footer>
+<nav>
+<div class="brand">Guide des <b>Compositions</b></div>
+<div class="cta" style="margin:0"><a class="btn ghost" href="#essai">Essayer gratuitement</a> <a class="btn ghost" href="#acheter">Obtenir l'application</a></div>
+</nav>
+<header class="hero">
+<div>
+<div class="eyebrow">Application Android hors ligne</div>
+<h1>Le Guide des Compositions est une appli créée par un joueur pour trouver la bonne équipe de héros à chaque chapitre.</h1>
+<p class="lead">Ce n'est pas une appli officielle, mais elle ne demande ni identifiant ni mot de passe, et elle n'accède jamais à ton compte de jeu. Comme elle est téléchargée en dehors du Play Store, Android te demandera d'autoriser son installation : c'est normal et sans danger. Essaie gratuitement la version d'essai avant d'acheter !</p>
+<div class="cta">
+<a class="btn" href="#acheter">Je veux progresser plus vite</a>
+<a class="btn ghost" href="#fonctions">Voir les fonctions</a>
 </div>
-
+<p class="muted" style="margin-top:14px;font-size:.85rem;max-width:52ch">Les équipes sont les plus utilisées par les joueurs. Elles donnent un bon point de départ, sans garantie de réussite.</p>
+</div>
+<div class="phone" aria-label="Aperçu de l'application">
+<div class="screen">
+<div class="bar"><span>Chapitre 6 · Élite</span><span>Niv. repère 54</span></div>
+<div class="chap"><span>Étape 6-12</span><span>🟠</span></div>
+<div class="team"><div class="t"><span>Équipe n°1</span><span>⭐</span></div>
+<div class="heroes"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i><i class="g5"></i></div></div>
+<div class="team"><div class="t"><span>Équipe n°2</span><span></span></div>
+<div class="heroes"><i class="g3"></i><i class="g1"></i><i class="g5"></i><i class="g2"></i><i class="g4"></i></div></div>
+</div>
+</div>
+</header>
+<section class="sec" id="benefices">
+<div class="eyebrow">Pourquoi l'utiliser</div>
+<h2>Trois raisons de gagner du temps</h2>
+<div class="grid">
+<div class="card"><h3>Trouvez tout de suite l'équipe à essayer</h3><p>Pour chaque étape, la composition la plus utilisée est déjà affichée. Plus besoin de chercher.</p></div>
+<div class="card"><h3>Suivez vos héros</h3><p>Notez le niveau et la couleur de chaque héros et gardez une vue claire de votre progression.</p></div>
+<div class="card"><h3>Comparez plusieurs équipes</h3><p>Pour une même étape, découvrez d'autres compositions possibles et ajoutez la vôtre.</p></div>
+</div>
+</section>
+<section class="sec" id="fonctions">
+<div class="eyebrow">Fonctions</div>
+<h2>Ce que contient l'application</h2>
+<div class="grid">
+<div class="card"><h3>8 chapitres, 2 modes</h3><p>Normal et Élite, avec les équipes les plus utilisées pour chaque étape.</p></div>
+<div class="card"><h3>Mes héros</h3><p>Indiquez le niveau et la couleur de vos héros. Un repère de niveau vous prévient si vous êtes en dessous.</p></div>
+<div class="card"><h3>Ma composition</h3><p>Ajoutez vos propres équipes à côté de celles du guide, et modifiez-les quand vous voulez.</p></div>
+<div class="card"><h3>Médailles</h3><p>Un tableau récapitulatif par héros et par étape, pour le mode Élite.</p></div>
+<div class="card"><h3>Sauvegarde 💾</h3><p>Exportez vos réglages dans un fichier et rechargez-les sur un autre téléphone.</p></div>
+<div class="card"><h3>Hors ligne</h3><p>Aucun compte. Internet n'est nécessaire qu'une seule fois, pour activer votre code. Vos données restent sur votre appareil.</p></div>
+</div>
+</section>
+<section class="sec" id="acheter">
+<div class="eyebrow">Tarif</div>
+<h2>Un seul paiement</h2>
+<p class="muted">Pas d'abonnement, pas de publicité.</p>
+<div class="price">
+<div>
+<div class="amount">6 €<small>paiement unique</small></div>
+<p class="muted" style="margin-top:12px">Après paiement, vous recevez immédiatement votre code de licence et le lien de téléchargement.</p>
+</div>
+<div>
+<ul class="ok">
+<li>Application Android (APK) et Windows (installeur)</li>
+<li>Code de licence personnel (un seul téléphone)</li>
+<li>Mises à jour sur cette page</li>
+</ul>
+<label class="agree"><input type="checkbox" id="agree"> J'ai compris que l'application est réservée à mon usage personnel et que je ne dois pas la partager.</label>
+<div style="margin-top:16px"><a class="btn" id="buy" href="#acheter" aria-disabled="true">Bientôt disponible</a></div>
+<p class="note" id="buyNote">L'achat ouvrira prochainement. Aucun paiement n'est possible pour le moment.</p>
+<p class="muted" style="margin-top:8px;font-size:.85rem">Paiement sécurisé par Stripe. Après le paiement, votre code et le lien de téléchargement s'affichent tout de suite : notez le code.</p>
+</div>
+</div>
+</section>
+<section class="sec" id="essai">
+<div class="eyebrow">Essai gratuit</div>
+<h2>Essayez avant d'acheter</h2>
+<p class="muted">L'essai est gratuit et sans compte : les chapitres 1 à 3 du mode Élite sont ouverts, le reste est verrouillé. Le code de licence (après achat) débloque tout.</p>
+<div class="cta" style="margin-top:16px">
+<a class="btn" href="https://github.com/LGaulois/guide-compositions/releases/download/V1/guide-compositions.apk">Essai gratuit Android (APK)</a>
+<a class="btn ghost" href="https://github.com/LGaulois/guide-compositions/releases/download/V1/Guide-des-Compositions-Installation-1.0.0.exe">Essai gratuit Windows</a>
+</div>
+<p class="muted" style="margin-top:10px;font-size:.85rem">Android : autorisez l'installation d'applications inconnues si le téléphone le demande. Windows : si « Windows a protégé votre PC » s'affiche, cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>
+</section>
+<section class="sec" id="faq">
+<div class="eyebrow">Questions</div>
+<h2>Installation et questions fréquentes</h2>
+<details><summary>Comment installer l'application ?</summary><p>Téléchargez le fichier sur votre téléphone, ouvrez-le, puis autorisez l'installation d'applications inconnues pour l'application qui l'ouvre (navigateur ou Drive).</p></details>
+<details><summary>Android affiche « Application bloquée » ou un message Play Protect.</summary><p>L'application ne vient pas du Play Store, donc Play Protect ne la connaît pas encore. Appuyez sur « Plus de détails », puis « Installer quand même ». Sur certains Samsung, désactivez temporairement le « Bloqueur automatique ».</p></details>
+<details><summary>Puis-je utiliser l'application sur plusieurs téléphones ?</summary><p>Non : le code de licence ne fonctionne que sur un seul téléphone. Pour changer de téléphone, écrivez-nous à legionnairegaulois@gmail.com. En cas de remboursement, le code est désactivé.</p></details>
+<details><summary>Et sur iPhone ?</summary><p>Pas pour le moment. Seule la version Android est proposée.</p></details>
+<details><summary>Où sont mes données ?</summary><p>Uniquement sur votre téléphone. L'application ne se connecte à internet que pour vérifier votre code de licence (à l'activation, puis de temps en temps).</p></details>
+</section>
+<footer>
+<span>© Guide des Compositions · fanspeed</span>
+<span>Contact : legionnairegaulois@gmail.com</span>
+</footer>
+</div>
 <script>
-/* Paiement : tant que PAYPAL_LINK est vide, le bouton reste désactivé.
-   (Le nom est historique : le lien est maintenant celui de Stripe.) */
 var PAYPAL_LINK = 'https://buy.stripe.com/14A7sKbCN2vHcBX4zc3AY00';
 (function () {
-  var btn = document.getElementById('buy'), box = document.getElementById('agree'), note = document.getElementById('buyNote');
-  function refresh() {
-    if (!PAYPAL_LINK) return;
-    var ok = box.checked;
-    btn.textContent = 'Payer 6 €';
-    btn.setAttribute('aria-disabled', ok ? 'false' : 'true');
-    btn.href = ok ? PAYPAL_LINK : '#acheter';
-    btn.target = ok ? '_blank' : '';
-    btn.rel = 'noopener';
-    note.textContent = ok ? '' : 'Cochez la case ci-dessus pour continuer.';
-  }
-  btn.addEventListener('click', function (e) { if (btn.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
-  box.addEventListener('change', refresh);
-  refresh();
+var btn = document.getElementById('buy'), box = document.getElementById('agree'), note = document.getElementById('buyNote');
+function refresh() {
+if (!PAYPAL_LINK) return;
+var ok = box.checked;
+btn.textContent = 'Payer 6 €';
+btn.setAttribute('aria-disabled', ok ? 'false' : 'true');
+btn.href = ok ? PAYPAL_LINK : '#acheter';
+btn.target = ok ? '_blank' : '';
+btn.rel = 'noopener';
+note.textContent = ok ? '' : 'Cochez la case ci-dessus pour continuer.';
+}
+btn.addEventListener('click', function (e) { if (btn.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
+box.addEventListener('change', refresh);
+refresh();
 })();
 </script>
 </body>
