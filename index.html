@@ -68,7 +68,6 @@ footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);fo
 </head>
 <body>
 
-<div class="banner">Site en préparation : l'application n'est pas encore disponible.</div>
 
 <div class="wrap">
   <nav>
@@ -118,7 +117,7 @@ footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);fo
       <div class="card"><h3>Ma composition</h3><p>Ajoutez vos propres équipes à côté de celles du guide, et modifiez-les quand vous voulez.</p></div>
       <div class="card"><h3>Médailles</h3><p>Un tableau récapitulatif par héros et par étape, pour le mode Élite.</p></div>
       <div class="card"><h3>Sauvegarde 💾</h3><p>Exportez vos réglages dans un fichier et rechargez-les sur un autre téléphone.</p></div>
-      <div class="card"><h3>Hors ligne</h3><p>Aucun compte, aucune connexion. Vos données restent sur votre appareil.</p></div>
+      <div class="card"><h3>Hors ligne</h3><p>Aucun compte. Internet n'est nécessaire qu'une seule fois, pour activer votre code. Vos données restent sur votre appareil.</p></div>
     </div>
   </section>
 
@@ -129,18 +128,18 @@ footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);fo
     <div class="price">
       <div>
         <div class="amount">6 €<small>paiement unique</small></div>
-        <p class="muted" style="margin-top:12px">Après paiement, vous recevez un lien de téléchargement personnel.</p>
+        <p class="muted" style="margin-top:12px">Après paiement, vous recevez immédiatement votre code de licence et le lien de téléchargement.</p>
       </div>
       <div>
         <ul class="ok">
           <li>Application Android (fichier APK)</li>
-          <li>Lien de téléchargement à usage unique</li>
+          <li>Code de licence personnel (un seul téléphone)</li>
           <li>Mises à jour sur cette page</li>
         </ul>
         <label class="agree"><input type="checkbox" id="agree"> J'ai compris que l'application est réservée à mon usage personnel et que je ne dois pas la partager.</label>
         <div style="margin-top:16px"><a class="btn" id="buy" href="#acheter" aria-disabled="true">Bientôt disponible</a></div>
         <p class="note" id="buyNote">L'achat ouvrira prochainement. Aucun paiement n'est possible pour le moment.</p>
-        <p class="muted" style="margin-top:8px;font-size:.85rem">Paiement sécurisé par PayPal. Après le paiement, le lien de téléchargement vous est envoyé par e-mail.</p>
+        <p class="muted" style="margin-top:8px;font-size:.85rem">Paiement sécurisé par Stripe. Après le paiement, votre code et le lien de téléchargement s'affichent tout de suite : notez le code.</p>
       </div>
     </div>
   </section>
@@ -150,9 +149,9 @@ footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);fo
     <h2>Installation et questions fréquentes</h2>
     <details><summary>Comment installer l'application ?</summary><p>Téléchargez le fichier sur votre téléphone, ouvrez-le, puis autorisez l'installation d'applications inconnues pour l'application qui l'ouvre (navigateur ou Drive).</p></details>
     <details><summary>Android affiche « Application bloquée » ou un message Play Protect.</summary><p>L'application ne vient pas du Play Store, donc Play Protect ne la connaît pas encore. Appuyez sur « Plus de détails », puis « Installer quand même ». Sur certains Samsung, désactivez temporairement le « Bloqueur automatique ».</p></details>
-    <details><summary>Le lien fonctionne-t-il plusieurs fois ?</summary><p>Non, le lien de téléchargement est limité à un usage unique. Le fichier lui-même, une fois sur votre téléphone, est à vous : merci de ne pas le partager.</p></details>
+    <details><summary>Puis-je utiliser l'application sur plusieurs téléphones ?</summary><p>Non : le code de licence ne fonctionne que sur un seul téléphone. Pour changer de téléphone, écrivez-nous à fanspeed06@gmail.com. En cas de remboursement, le code est désactivé.</p></details>
     <details><summary>Et sur iPhone ?</summary><p>Pas pour le moment. Seule la version Android est proposée.</p></details>
-    <details><summary>Où sont mes données ?</summary><p>Uniquement sur votre téléphone. L'application ne se connecte à aucun serveur.</p></details>
+    <details><summary>Où sont mes données ?</summary><p>Uniquement sur votre téléphone. L'application ne se connecte à internet que pour vérifier votre code de licence (à l'activation, puis de temps en temps).</p></details>
   </section>
 
   <footer>
@@ -163,14 +162,14 @@ footer{padding-block:36px;border-top:1px solid var(--line);color:var(--muted);fo
 
 <script>
 /* Paiement : tant que PAYPAL_LINK est vide, le bouton reste désactivé.
-   Pour activer : coller ici le lien de paiement PayPal à 6 € (https://www.paypal.com/...). */
-var PAYPAL_LINK = '';
+   (Le nom est historique : le lien est maintenant celui de Stripe.) */
+var PAYPAL_LINK = 'https://buy.stripe.com/14A7sKbCN2vHcBX4zc3AY00';
 (function () {
   var btn = document.getElementById('buy'), box = document.getElementById('agree'), note = document.getElementById('buyNote');
   function refresh() {
     if (!PAYPAL_LINK) return;
     var ok = box.checked;
-    btn.textContent = 'Payer 6 € avec PayPal';
+    btn.textContent = 'Payer 6 €';
     btn.setAttribute('aria-disabled', ok ? 'false' : 'true');
     btn.href = ok ? PAYPAL_LINK : '#acheter';
     btn.target = ok ? '_blank' : '';
