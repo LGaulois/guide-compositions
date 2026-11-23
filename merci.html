@@ -31,6 +31,7 @@ var CLAIM_URL = 'https://thrxnztptstexukfwurq.supabase.co/functions/v1/claim';
 var st = document.getElementById('st');
 function show(html){ st.innerHTML = html; }
 function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+var WIN_URL = 'https://github.com/LGaulois/guide-compositions/releases/download/V1/Guide-des-Compositions-Installation-1.0.0.exe';
 var sid = new URLSearchParams(location.search).get('session_id');
 if (!CLAIM_URL) {
   show('<p class="err">Page en préparation : le serveur n\'est pas encore relié.</p>');
@@ -41,18 +42,20 @@ if (!CLAIM_URL) {
   .then(function(r){ return r.json(); })
   .then(function(j){
     if (j.status === 'ok') {
-      show('<p>Voici votre code de licence. <strong>Notez-le ou gardez cette page</strong> : il ne fonctionne que sur un seul téléphone.</p>' +
+      show('<p>Voici votre code de licence. <strong>Notez-le ou gardez cette page</strong> : il ne fonctionne que sur un seul appareil (téléphone ou ordinateur).</p>' +
         '<div class="code" id="c">' + esc(j.key) + '</div>' +
         '<button class="btn ghost" id="cp" type="button">Copier le code</button>' +
-        (j.download ? '<a class="btn" href="' + esc(j.download) + '">Télécharger l\'application</a>' : '<p class="err">Lien de téléchargement indisponible, rechargez la page.</p>') +
+        (j.download ? '<a class="btn" href="' + esc(j.download) + '">Télécharger pour Android</a>' : '<p class="err">Lien de téléchargement indisponible, rechargez la page.</p>') +
+        '<a class="btn ghost" href="' + WIN_URL + '">Télécharger pour Windows</a>' +
         '<ol><li>Téléchargez le fichier sur votre téléphone Android et ouvrez-le.</li>' +
         '<li>Autorisez l\'installation d\'applications inconnues si Android le demande.</li>' +
         '<li>Dans l\'application, touchez « 🔑 Code de licence » et saisissez le code (internet requis une seule fois).</li></ol>' +
-        '<p class="note">Le lien de téléchargement dure 1 heure ; rechargez cette page pour en obtenir un nouveau.</p>');
+        '<p class="note">Windows : lancez le fichier téléchargé. Si Windows affiche « Windows a protégé votre PC », cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p>' +
+        '<p class="note">Le lien Android dure 1 heure ; rechargez cette page pour en obtenir un nouveau.</p>');
       document.getElementById('cp').onclick = function(){ try { navigator.clipboard.writeText(j.key); this.textContent = 'Copié ✔'; } catch(e){} };
     } else if (j.status === 'unpaid') show('<p class="err">Le paiement n\'est pas encore confirmé. Patientez quelques secondes et rechargez la page.</p>');
     else if (j.status === 'refunded') show('<p class="err">Cet achat a été remboursé : le code n\'est plus valable.</p>');
-    else show('<p class="err">Impossible de retrouver cet achat. Écrivez à fanspeed06@gmail.com en indiquant l\'e-mail utilisé pour payer.</p>' + (j.debug ? '<p class="note">Détail technique : ' + esc(JSON.stringify(j.debug)) + '</p>' : ''));
+    else show('<p class="err">Impossible de retrouver cet achat. Écrivez à legionnairegaulois@gmail.com en indiquant l\'e-mail utilisé pour payer.</p>' + (j.debug ? '<p class="note">Détail technique : ' + esc(JSON.stringify(j.debug)) + '</p>' : ''));
   })
   .catch(function(){ show('<p class="err">Connexion impossible. Rechargez la page.</p>'); });
 }
