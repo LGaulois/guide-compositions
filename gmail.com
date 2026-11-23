@@ -52,7 +52,7 @@ if (!CLAIM_URL) {
       document.getElementById('cp').onclick = function(){ try { navigator.clipboard.writeText(j.key); this.textContent = 'Copié ✔'; } catch(e){} };
     } else if (j.status === 'unpaid') show('<p class="err">Le paiement n\'est pas encore confirmé. Patientez quelques secondes et rechargez la page.</p>');
     else if (j.status === 'refunded') show('<p class="err">Cet achat a été remboursé : le code n\'est plus valable.</p>');
-    else show('<p class="err">Impossible de retrouver cet achat. Écrivez à fanspeed06@gmail.com en indiquant l\'e-mail utilisé pour payer.</p>' + (j.debug ? '<p class="note">Détail technique : ' + esc(JSON.stringify(j.debug)) + '</p>' : ''));
+    else show('<p class="err">Impossible de retrouver cet achat. Écrivez à legionnairegaulois@gmail.com en indiquant l\'e-mail utilisé pour payer.</p>' + (j.debug ? '<p class="note">Détail technique : ' + esc(JSON.stringify(j.debug)) + '</p>' : ''));
   })
   .catch(function(){ show('<p class="err">Connexion impossible. Rechargez la page.</p>'); });
 }
